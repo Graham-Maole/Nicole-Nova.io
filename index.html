@@ -137,15 +137,27 @@
   <h2>Contact Maole Stack</h2>
   <p>Let’s talk about your project. Send us a message and we’ll get back to you.</p>
 
-  <form action="https://formspree.io/f/xwkzqjqo" method="POST" style="margin-top:30px;">
-    <input type="text" name="name" placeholder="Your Name" required style="width:100%; padding:12px; margin-bottom:12px;">
-    <input type="email" name="email" placeholder="Your Email" required style="width:100%; padding:12px; margin-bottom:12px;">
-    <textarea name="message" placeholder="Your Message" required style="width:100%; padding:12px; height:120px; margin-bottom:12px;"></textarea>
+ <form action="https://formspree.io/f/xykyzwgq" method="POST" style="margin-top:30px;">
+  <input type="text" name="name" placeholder="Your Name" required
+         style="width:100%; padding:12px; margin-bottom:12px;">
 
-    <button type="submit" style="padding:12px 20px; background:black; color:white; border:none;">
-      Send Message
-    </button>
-  </form>
+  <input type="email" name="email" placeholder="Your Email" required
+         style="width:100%; padding:12px; margin-bottom:12px;">
+
+  <textarea name="message" placeholder="Your Message" required
+            style="width:100%; padding:12px; height:120px; margin-bottom:12px;"></textarea>
+
+  <!-- Optional subject -->
+  <input type="hidden" name="_subject" value="New message from Maole Stack website">
+
+  <!-- Disable spam -->
+  <input type="text" name="_gotcha" style="display:none">
+
+  <button type="submit" style="padding:12px 20px; background:black; color:white; border:none;">
+    Send Message
+  </button>
+</form>
+
 
   <p style="margin-top:20px;">
     Or chat with us directly on WhatsApp:
@@ -166,7 +178,4 @@
   </a>
 
 </body>
-</html>
-
-
 </html>
