@@ -173,6 +173,12 @@ a:hover {
   background: #005bb5;
   text-decoration: none;
 }
+.hero-title {
+  font-size: 64px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  margin-bottom: 18px;
+}
 
 </style>
 
@@ -199,9 +205,16 @@ a:hover {
 
  <header>
   <div class="container" style="text-align:center; padding:120px 0;">
-    <h1>Maole Stack</h1>
+    <h1 class="hero-title">Maole Stack</h1>
 
-    <p style="font-size:20px; margin:20px auto 0;">
+    <p class="hero-subtitle">
+.hero-subtitle {
+  font-size: 20px;
+  color: var(--text-muted);
+  margin: 0 auto;
+  max-width: 720px;
+}
+
       Building reliable, high-performance websites and web applications for modern businesses.
     </p>
 
@@ -209,9 +222,16 @@ a:hover {
        target="_blank"
        class="apple-button">
       Start a project
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+
     </a>
   </div>
 </header>
+header a:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  text-decoration: none;
+}
 
 
 <section class="section-soft">
