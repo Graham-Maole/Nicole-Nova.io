@@ -117,7 +117,13 @@ section > div {
 a {
   color: #0066cc;
   text-decoration: none;
+  transition: opacity 0.2s ease;
 }
+
+a:hover {
+  opacity: 0.85;
+}
+
 
 a:hover {
   text-decoration: underline;
@@ -153,10 +159,12 @@ a:hover {
   opacity: 0.85;
   transition: opacity 0.25s ease;
 }
+
 .nav-links a:hover {
   opacity: 1;
   text-decoration: none;
 }
+
 
 .apple-button {
   display: inline-block;
@@ -167,7 +175,15 @@ a:hover {
   border-radius: 999px;
   font-size: 17px;
   font-weight: 500;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+.apple-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  text-decoration: none;
+}
+
 
 .apple-button:hover {
   background: #005bb5;
@@ -194,6 +210,10 @@ header a:hover {
   box-shadow: 0 8px 20px rgba(0,0,0,0.12);
   text-decoration: none;
 }
+  section {
+  scroll-margin-top: 80px;
+}
+
 </style>
 
 
