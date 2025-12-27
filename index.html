@@ -256,6 +256,17 @@ section h3 {
   margin-top: 48px;
   margin-bottom: 12px;
 }
+/* Apple-style fade & lift animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 </style>
 
