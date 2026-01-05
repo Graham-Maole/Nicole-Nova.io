@@ -349,6 +349,46 @@ body {
     transition: none !important;
   }
 }
+  /* =========================
+   INTRO LOGO ANIMATION
+   ========================= */
+
+#intro-logo {
+  position: fixed;
+  inset: 0;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: introFadeOut 1s ease forwards;
+  animation-delay: 2.8s;
+}
+
+#intro-logo img {
+  width: 140px;
+  animation: logoReveal 1.6s ease forwards;
+}
+
+/* Logo entrance */
+@keyframes logoReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Screen fade out */
+@keyframes introFadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
 
 </style>
 
@@ -360,7 +400,7 @@ body {
 <!-- LOGO INTRO OVERLAY -->
 <div id="logo-intro">
   <div class="logo-wrapper">
-    <img src="assets/logo.png" alt="NicoleNova Logo" />
+    <img src="logo.png" alt="NicoleNova Logo" />
   </div>
 </div>
 
@@ -629,6 +669,20 @@ body {
   reveals.forEach(section => {
     revealObserver.observe(section);
   });
+  /* =========================
+   INTRO LOGO CLEANUP
+   ========================= */
+
+window.addEventListener("load", () => {
+  const intro = document.getElementById("intro-logo");
+
+  if (intro) {
+    setTimeout(() => {
+      intro.remove();
+    }, 3200);
+  }
+});
+
 </script>
 
 
