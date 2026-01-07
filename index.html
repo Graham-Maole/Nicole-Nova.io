@@ -350,6 +350,60 @@ body {
   }
 }
   /* =========================
+   LOGO ANIMATION – APPLE STYLE
+   ========================= */
+
+.logo-icon {
+  fill: #0a0a0a;
+  opacity: 0;
+  transform: scale(0.92);
+  animation: iconIn 1.4s ease forwards;
+}
+
+.logo-icon-soft {
+  fill: rgba(10,10,10,0.35);
+  opacity: 0;
+  animation: iconIn 1.6s ease forwards;
+}
+
+.logo-text {
+  fill: #0a0a0a;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  opacity: 0;
+  animation: textSpread 1.8s ease forwards;
+  animation-delay: 0.6s;
+}
+
+/* ICON FADE IN */
+@keyframes iconIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* TEXT SPREAD → SETTLE */
+@keyframes textSpread {
+  0% {
+    opacity: 0;
+    letter-spacing: 0.45em;
+    transform: translateY(6px);
+  }
+  60% {
+    opacity: 1;
+    letter-spacing: 0.25em;
+  }
+  100% {
+    opacity: 1;
+    letter-spacing: 0.12em;
+    transform: translateY(0);
+  }
+}
+
+  /* =========================
    INTRO LOGO ANIMATION
    ========================= */
 
@@ -399,9 +453,30 @@ body {
 <body>
 <!-- LOGO INTRO OVERLAY -->
 <!-- INTRO LOGO OVERLAY -->
-<div id="intro-logo">
-  <img src="logo.svg" alt="Nicole Nova Logo">
-</div>
+<svg id="logo-svg"
+     width="180"
+     height="120"
+     viewBox="0 0 120 100"
+     xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Icon -->
+  <rect x="36" y="8" width="6" height="48" rx="1" class="logo-icon"/>
+  <path d="M42 8L42 16L62 40L62 48L68 48L68 40L88 16L88 8L82 8L68 26L68 8L62 8L62 26L48 8L42 8Z"
+        class="logo-icon"/>
+  <rect x="62" y="16" width="6" height="40" rx="1" class="logo-icon"/>
+  <rect x="82" y="8" width="6" height="48" rx="1" class="logo-icon"/>
+  <circle cx="60" cy="32" r="4" class="logo-icon-soft"/>
+
+  <!-- Text -->
+  <text x="60"
+        y="78"
+        text-anchor="middle"
+        class="logo-text">
+    Nicole Nova
+  </text>
+
+</svg>
+
 
 <nav class="apple-nav">
   <div class="nav-container">
