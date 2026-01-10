@@ -366,16 +366,7 @@ body {
   animation: iconIn 1.6s ease forwards;
 }
 
-.logo-text {
-  fill: #0a0a0a;
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui;
-  font-size: 22px;
-  font-weight: 600;
-  letter-spacing: 0.35em;
-  opacity: 0;
-  animation: textSpread 1.8s ease forwards;
-  animation-delay: 0.6s;
-}
+
 
 /* ICON FADE IN */
 @keyframes iconIn {
@@ -400,6 +391,35 @@ body {
     opacity: 1;
     letter-spacing: 0.12em;
     transform: translateY(0);
+  }
+}
+.logo-text-group text {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui;
+  font-size: 22px;
+  font-weight: 600;
+  fill: #0a0a0a;
+}
+
+.logo-letter {
+  opacity: 0;
+  transform-origin: center;
+  animation: letterFlip 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation-delay: calc(var(--i) * 0.08s);
+}
+
+/* TikTok-style somersault, Apple-polished */
+@keyframes letterFlip {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) rotateX(90deg);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-4px) rotateX(-20deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
   }
 }
 
@@ -471,12 +491,22 @@ body {
     <circle cx="60" cy="32" r="4" class="logo-icon-soft"/>
 
     <!-- Text -->
-    <text x="60"
-          y="78"
-          text-anchor="middle"
-          class="logo-text">
-      Nicole Nova
-    </text>
+   <g class="logo-text-group" transform="translate(0, 0)">
+  <text x="60" y="78" text-anchor="middle">
+    <tspan class="logo-letter" style="--i:1">N</tspan>
+    <tspan class="logo-letter" style="--i:2">i</tspan>
+    <tspan class="logo-letter" style="--i:3">c</tspan>
+    <tspan class="logo-letter" style="--i:4">o</tspan>
+    <tspan class="logo-letter" style="--i:5">l</tspan>
+    <tspan class="logo-letter" style="--i:6">e</tspan>
+    <tspan dx="8"></tspan>
+    <tspan class="logo-letter" style="--i:7">N</tspan>
+    <tspan class="logo-letter" style="--i:8">o</tspan>
+    <tspan class="logo-letter" style="--i:9">v</tspan>
+    <tspan class="logo-letter" style="--i:10">a</tspan>
+  </text>
+</g>
+
 
   </svg>
 
